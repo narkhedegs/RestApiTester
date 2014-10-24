@@ -2,11 +2,11 @@
 
 namespace RestApiTester.Common
 {
-    public interface IRestRequestCollection
+    public interface IRestRequestCollection<T> where T : IRestRequestCollectionItem
     {
         string Id { get; set; }
         string Name { get; set; }
         string Description { get; set; }
-        List<IRestRequestCollectionItem> Items { get; set; }
+        IEnumerable<T> Items { get; set; }
     }
 }

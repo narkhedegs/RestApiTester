@@ -44,7 +44,6 @@
     <Compile Include="IRestRequestCollectionItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestRequestCollectionItemType.cs" />
-    <Compile Include="IHeader.cs" />
     <Compile Include="RestRequestMethod.cs" />
   </ItemGroup>
   <ItemGroup>

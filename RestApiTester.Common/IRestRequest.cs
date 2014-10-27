@@ -6,7 +6,7 @@ namespace RestApiTester.Common
     {
         IDictionary<string,string> Headers { get; set; }
         RestRequestMethod Method { get; set; }
-        string Boby { get; set; }
+        string Body { get; set; }
         string Url { get; set; }
     }
 }

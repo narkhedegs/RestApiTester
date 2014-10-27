@@ -7,7 +7,7 @@
     <authors>Gaurav Narkhede | narkhedegs@gmail.com</authors>
     <owners>Gaurav Narkhede | narkhedegs@gmail.com</owners>
     <licenseUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/README.md</projectUrl>
+    <projectUrl>https://github.com/narkhedegs/RestApiTester</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Common contracts used by Rest Api Tester</description>

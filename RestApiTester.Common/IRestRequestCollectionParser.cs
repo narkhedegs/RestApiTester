@@ -2,6 +2,6 @@
 {
     public interface IRestRequestCollectionParser
     {
-        IRestRequestCollection<IRestRequestCollectionItem> Parse(string collectionJson);
+        IRestRequestCollection Parse(string collectionJson);
     }
 }

@@ -42,6 +42,7 @@
     <Compile Include="IRestRequest.cs" />
     <Compile Include="IRestRequestCollection.cs" />
     <Compile Include="IRestRequestCollectionItem.cs" />
+    <Compile Include="IRestRequestCollectionParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestRequestCollectionItemType.cs" />
     <Compile Include="RestRequestMethod.cs" />

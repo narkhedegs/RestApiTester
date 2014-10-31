@@ -93,7 +93,8 @@ namespace RestApiTester.Tests
                 before = () =>
                 {
                     _unpopulatedRestRequest =
-                        RestRequestGenerator.Default().WithUrlPath("${URI}/AuthenticationService/CheckPassword");
+                        RestRequestGenerator.Default()
+                            .WithUrl(UrlGenerator.Default().WithPath("${URI}/AuthenticationService/CheckPassword"));
                     _collectionRunConfiguration =
                         CollectionRunConfigurationGenerator.Default()
                             .WithEnvironmentVariable("URI", uri);

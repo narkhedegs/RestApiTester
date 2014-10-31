@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/narkhedegs/RestApiTester</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>API for running REST Request Collections.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright © GSN 2014</copyright>
+    <tags>REST Tester API</tags>
+  </metadata>
+</package>

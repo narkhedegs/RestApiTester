@@ -29,6 +29,12 @@ namespace RestApiTester.Tests.Helpers
             url.Scheme = string.Empty;
             return url;
         }
+        
+        public static IUrl WithQueryParameters(this IUrl url, IDictionary<string,string> parameters)
+        {
+            url.QueryParameters = parameters;
+            return url;
+        }
     }
 
     public class FakeUrl : IUrl

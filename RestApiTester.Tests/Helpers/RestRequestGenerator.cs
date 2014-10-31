@@ -27,30 +27,23 @@ namespace RestApiTester.Tests.Helpers
             return request;
         }
 
-        public static IRestRequest WithUrlPath(this IRestRequest request, string urlPath)
+        public static IRestRequest WithHeaders(this IRestRequest request, IDictionary<string,string> headers)
         {
-            request.Url = UrlGenerator.Default().WithPath(urlPath);
+            request.Headers = headers;
 
             return request;
         }
 
-        public static IRestRequest WithNoUrl(this IRestRequest request)
+        public static IRestRequest WithMethod(this IRestRequest request, RestRequestMethod method)
         {
-            request.Url = null;
+            request.Method = method;
 
             return request;
-        }        
+        }
         
-        public static IRestRequest WithNoUrlScheme(this IRestRequest request)
+        public static IRestRequest WithUrl(this IRestRequest request, IUrl url)
         {
-            request.Url = UrlGenerator.Default().WithNoScheme();
-
-            return request;
-        }
-
-        public static IRestRequest WithNoUrlPath(this IRestRequest request)
-        {
-            request.Url = UrlGenerator.Default().WithNoPath();
+            request.Url = url;
 
             return request;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RestApiTester.Common;
 
 namespace RestApiTester.Tests.Helpers
 {

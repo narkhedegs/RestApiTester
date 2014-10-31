@@ -1,4 +1,4 @@
-﻿namespace RestApiTester
+﻿namespace RestApiTester.Common
 {
     public class RestRequestCollectionRunConfiguration
     {

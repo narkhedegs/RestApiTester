@@ -57,13 +57,19 @@
   <ItemGroup>
     <Compile Include="Helpers\CollectionRunConfigurationGenerator.cs" />
     <Compile Include="Helpers\DebuggerShim.cs" />
+    <Compile Include="Helpers\RestRequestCollectionGenerator.cs" />
+    <Compile Include="Helpers\RestRequestCollectionItemGenerator.cs" />
     <Compile Include="Helpers\RestRequestGenerator.cs" />
     <Compile Include="Helpers\UrlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rest_client_specifications.cs" />
     <Compile Include="rest_request_collection_runner_specifications.cs" />
     <Compile Include="rest_request_populator_specifications.cs" />
+    <Compile Include="rest_request_validator_specifications.cs" />
+    <Compile Include="rest_response_builder_specifications.cs" />
     <Compile Include="rest_sharp_rest_client_builder_specifications.cs" />
     <Compile Include="rest_sharp_rest_request_builder_specifications.cs" />
+    <Compile Include="url_validator_specifications.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

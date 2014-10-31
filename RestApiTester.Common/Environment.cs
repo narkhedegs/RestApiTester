@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RestApiTester
+namespace RestApiTester.Common
 {
     public class Environment
     {

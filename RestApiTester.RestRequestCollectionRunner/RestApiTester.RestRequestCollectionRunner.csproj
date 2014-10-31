@@ -33,6 +33,9 @@
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.5.4.0.0\lib\Net40\FluentValidation.dll</HintPath>
     </Reference>
+    <Reference Include="RestApiTester.Common">
+      <HintPath>..\packages\RestApiTester.Common.0.8.0.0\lib\net451\RestApiTester.Common.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.5.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -45,25 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Environment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestClient.cs" />
     <Compile Include="RestRequestValidator.cs" />
+    <Compile Include="RestResponseBuilder.cs" />
     <Compile Include="RestSharpRestClientBuilder.cs" />
     <Compile Include="RestSharpRestRequestBuilder.cs" />
     <Compile Include="RestRequestCollectionRunner.cs" />
-    <Compile Include="RestRequestCollectionRunConfiguration.cs" />
     <Compile Include="RestRequestPopulator.cs" />
     <Compile Include="RestResponse.cs" />
     <Compile Include="UrlValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RestApiTester.Common\RestApiTester.Common.csproj">
-      <Project>{cabb0bd2-f537-4f83-93c2-074d106ab2fa}</Project>
-      <Name>RestApiTester.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+    <None Include="RestApiTester.RestRequestCollectionRunner.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

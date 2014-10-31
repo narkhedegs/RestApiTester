@@ -39,13 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfterCollectionRunEventArgs.cs" />
+    <Compile Include="AfterRequestRunEventArgs.cs" />
+    <Compile Include="BeforeCollectionRunEventArgs.cs" />
+    <Compile Include="BeforeRequestRunEventArgs.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="IRestRequest.cs" />
     <Compile Include="IRestRequestCollection.cs" />
     <Compile Include="IRestRequestCollectionItem.cs" />
     <Compile Include="IRestRequestCollectionParser.cs" />
+    <Compile Include="IRestRequestCollectionRunner.cs" />
+    <Compile Include="IRestResponse.cs" />
     <Compile Include="IUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseStatus.cs" />
     <Compile Include="RestRequestCollectionItemType.cs" />
+    <Compile Include="RestRequestCollectionRunConfiguration.cs" />
     <Compile Include="RestRequestMethod.cs" />
   </ItemGroup>
   <ItemGroup>

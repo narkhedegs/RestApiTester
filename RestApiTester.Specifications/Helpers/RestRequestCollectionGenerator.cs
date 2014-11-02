@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using RestApiTester.Common;
 
-namespace RestApiTester.Tests.Helpers
+namespace RestApiTester.Specifications.Helpers
 {
     public static class RestRequestCollectionGenerator
     {

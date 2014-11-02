@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiTester.Common", "Res
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiTester.RestRequestCollectionRunner", "RestApiTester.RestRequestCollectionRunner\RestApiTester.RestRequestCollectionRunner.csproj", "{DFB1389A-6D4A-4C5A-BC17-FDBB5671AF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiTester.Tests", "RestApiTester.Tests\RestApiTester.Tests.csproj", "{893FB511-1CEF-41AF-9FD6-6C1452DC245F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiTester.Specifications", "RestApiTester.Specifications\RestApiTester.Specifications.csproj", "{893FB511-1CEF-41AF-9FD6-6C1452DC245F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RestApiTester.Tests")]
+[assembly: AssemblyTitle("RestApiTester.Specifications")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("UPMC")]
-[assembly: AssemblyProduct("RestApiTester.Tests")]
-[assembly: AssemblyCopyright("Copyright © UPMC 2014")]
+[assembly: AssemblyCompany("narkhedegs@gmail.com")]
+[assembly: AssemblyProduct("RestApiTester.Specifications")]
+[assembly: AssemblyCopyright("Copyright © 2014 Gaurav Narkhede<narkhedegs@gmail.com>")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

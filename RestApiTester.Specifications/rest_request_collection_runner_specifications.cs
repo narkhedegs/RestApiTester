@@ -4,9 +4,9 @@ using System.Linq;
 using Moq;
 using NSpec;
 using RestApiTester.Common;
-using RestApiTester.Tests.Helpers;
+using RestApiTester.Specifications.Helpers;
 
-namespace RestApiTester.Tests
+namespace RestApiTester.Specifications
 {
     public class rest_request_collection_runner_specifications : nspec
     {

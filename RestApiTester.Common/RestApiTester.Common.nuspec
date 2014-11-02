@@ -4,15 +4,15 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Gaurav Narkhede | narkhedegs@gmail.com</authors>
-    <owners>Gaurav Narkhede | narkhedegs@gmail.com</owners>
+    <authors>Gaurav Narkhede</authors>
+    <owners>Gaurav Narkhede</owners>
     <licenseUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/narkhedegs/RestApiTester</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/narkhedegs/RestApiTester/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Common contracts used by Rest Api Tester</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright © GSN 2014</copyright>
+    <copyright>Copyright © 2014 Gaurav Narkhede&lt;narkhedegs@gmail.com&gt;</copyright>
     <tags>REST Tester API</tags>
   </metadata>
 </package>

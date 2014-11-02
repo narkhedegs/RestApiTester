@@ -2,7 +2,7 @@
 using NSpec;
 using RestApiTester.Common;
 
-namespace RestApiTester.Tests
+namespace RestApiTester.Specifications
 {
     public class rest_client_specifications : nspec
     {

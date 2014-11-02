@@ -1,11 +1,11 @@
-﻿using FluentValidation.Results;
+﻿using FluentValidation;
+using FluentValidation.Results;
 using Moq;
 using NSpec;
-using RestApiTester.Tests.Helpers;
-using IRestRequest = RestApiTester.Common.IRestRequest;
-using FluentValidation;
+using RestApiTester.Common;
+using RestApiTester.Specifications.Helpers;
 
-namespace RestApiTester.Tests
+namespace RestApiTester.Specifications
 {
     public class rest_sharp_rest_client_builder_specifications : nspec
     {

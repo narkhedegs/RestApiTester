@@ -7,8 +7,8 @@
     <ProjectGuid>{893FB511-1CEF-41AF-9FD6-6C1452DC245F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RestApiTester.Tests</RootNamespace>
-    <AssemblyName>RestApiTester.Tests</AssemblyName>
+    <RootNamespace>RestApiTester.Specifications</RootNamespace>
+    <AssemblyName>RestApiTester.Specifications</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -3,13 +3,13 @@ using System.Net;
 using System.Text;
 using NSpec;
 using NSpec.Domain.Extensions;
-using RestApiTester.Tests.Helpers;
+using RestApiTester.Specifications.Helpers;
 using RestSharp;
 using IRestRequest = RestApiTester.Common.IRestRequest;
 using IRestResponse = RestApiTester.Common.IRestResponse;
 using ResponseStatus = RestApiTester.Common.ResponseStatus;
 
-namespace RestApiTester.Tests
+namespace RestApiTester.Specifications
 {
     public class rest_response_builder_specifications : nspec
     {

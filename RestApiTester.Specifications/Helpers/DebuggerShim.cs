@@ -13,13 +13,14 @@
  *     
  * Visual Studio will detect this and will give you a window which you can use to attach a debugger.
  */
+
 using System.Linq;
 using NSpec;
 using NSpec.Domain;
 using NSpec.Domain.Formatters;
 using NUnit.Framework;
 
-namespace RestApiTester.Tests.Helpers
+namespace RestApiTester.Specifications.Helpers
 {
     [TestFixture]
     public class DebuggerShim

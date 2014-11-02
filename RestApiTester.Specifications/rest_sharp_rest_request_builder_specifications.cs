@@ -6,11 +6,11 @@ using Moq;
 using NSpec;
 using NSpec.Domain.Extensions;
 using RestApiTester.Common;
-using RestApiTester.Tests.Helpers;
+using RestApiTester.Specifications.Helpers;
 using RestSharp;
 using IRestRequest = RestApiTester.Common.IRestRequest;
 
-namespace RestApiTester.Tests
+namespace RestApiTester.Specifications
 {
     public class rest_sharp_rest_request_builder_specifications : nspec
     {

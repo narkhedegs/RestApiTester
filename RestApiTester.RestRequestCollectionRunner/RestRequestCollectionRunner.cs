@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using RestApiTester.Common;
 
 namespace RestApiTester
@@ -30,34 +31,58 @@ namespace RestApiTester
 
             var restResponses = new List<IRestResponse>();
 
+            collection.Items.ToList().ForEach(item =>
+            {
+                if (item.Type == RestRequestCollectionItemType.Request)
+                {
+                    item.Request = _requestPopulator.Populate(item.Request, configuration);
+                }
+            });
+
             if (BeforeCollectionRun != null)
             {
-                BeforeCollectionRun(this, new BeforeCollectionRunEventArgs {Collection = collection});
+                BeforeCollectionRun(this, new BeforeCollectionRunEventArgs
+                {
+                    Collection = collection,
+                    Environment = configuration.Environment,
+                    RestClient = _restClient
+                });
             }
 
             foreach (var item in collection.Items)
             {
                 if (item.Type == RestRequestCollectionItemType.Request)
                 {
-                    var populatedRequest = _requestPopulator.Populate(item.Request, configuration);
-
                     if (BeforeRequestRun != null)
                     {
-                        BeforeRequestRun(this, new BeforeRequestRunEventArgs {Request = populatedRequest});
+                        BeforeRequestRun(this, new BeforeRequestRunEventArgs
+                        {
+                            Request = item.Request,
+                            Environment = configuration.Environment,
+                            RestClient = _restClient
+                        });
                     }
 
-                    var restResponse = _restClient.Execute(populatedRequest);
+                    var restResponse = _restClient.Execute(item.Request);
 
                     if (AfterRequestRun != null)
                     {
-                        AfterRequestRun(this, new AfterRequestRunEventArgs {Response = restResponse});
+                        AfterRequestRun(this, new AfterRequestRunEventArgs
+                        {
+                            Response = restResponse,
+                            Environment = configuration.Environment,
+                            RestClient = _restClient
+                        });
                     }
 
                     restResponses.Add(restResponse);
                 }
             }
 
-            if (AfterCollectionRun != null) AfterCollectionRun(this, new AfterCollectionRunEventArgs());
+            if (AfterCollectionRun != null)
+            {
+                AfterCollectionRun(this, new AfterCollectionRunEventArgs());
+            }
 
             return restResponses;
         }

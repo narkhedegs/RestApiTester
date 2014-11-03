@@ -2,11 +2,6 @@
 
 namespace RestApiTester
 {
-    public interface IRestClient
-    {
-        IRestResponse Execute(IRestRequest request);
-    }
-
     public class RestClient : IRestClient
     {
         private readonly IRestSharpRestClientBuilder _restSharpRestClientBuilder;

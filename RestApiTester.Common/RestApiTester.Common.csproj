@@ -44,6 +44,10 @@
     <Compile Include="BeforeCollectionRunEventArgs.cs" />
     <Compile Include="BeforeRequestRunEventArgs.cs" />
     <Compile Include="Environment.cs" />
+    <Compile Include="IAfterRequestRunAddIn.cs" />
+    <Compile Include="IBeforeCollectionRunAddIn.cs" />
+    <Compile Include="IBeforeRequestRunAddIn.cs" />
+    <Compile Include="IRestClient.cs" />
     <Compile Include="IRestRequest.cs" />
     <Compile Include="IRestRequestCollection.cs" />
     <Compile Include="IRestRequestCollectionItem.cs" />

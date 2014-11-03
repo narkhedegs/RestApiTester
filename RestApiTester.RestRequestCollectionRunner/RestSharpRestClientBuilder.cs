@@ -1,6 +1,6 @@
 ﻿using System;
 using FluentValidation;
-using IRestRequest = RestApiTester.Common.IRestRequest;
+using RestApiTester.Common;
 
 namespace RestApiTester
 {
@@ -24,7 +24,7 @@ namespace RestApiTester
 
             var restClient = new RestSharp.RestClient();
             var uri = new Uri(restRequest.Url.Scheme + "://" + restRequest.Url.Path);
-            restClient.BaseUrl = string.Format("{0}://{1}", uri.Scheme, uri.Authority);
+            restClient.BaseUrl = new Uri(string.Format("{0}://{1}", uri.Scheme, uri.Authority));
 
             return restClient;
         }

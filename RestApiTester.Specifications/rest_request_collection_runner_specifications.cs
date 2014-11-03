@@ -51,11 +51,16 @@ namespace RestApiTester.Specifications
                     };
                 };
 
-                it["should raise BeforeCollectionRun event"] = () => raisedEvents.should_contain(eventName => eventName == "BeforeCollectionRun");
+                it["should raise BeforeCollectionRun event"] =
+                    () => raisedEvents.should_contain(eventName => eventName == "BeforeCollectionRun");
                 it["BeforeCollectionRunEventArgs should not be null"] =
                     () => beforeCollectionRunEventArgs.should_not_be_null();
                 it["BeforeCollectionRunEventArgs Collection should contain RestRequestCollection"] =
                     () => beforeCollectionRunEventArgs.Collection.should_be(_collection);
+                it["BeforeCollectionRunEventArgs Environment should contain Environment"] =
+                    () => beforeCollectionRunEventArgs.Environment.should_be(_configuration.Environment);
+                it["BeforeCollectionRunEventArgs RestClient should contain RestClient"] =
+                    () => beforeCollectionRunEventArgs.RestClient.should_be(_restClient.Object);
             };
 
             context["BeforeRequestRun Event"] = () =>
@@ -71,9 +76,14 @@ namespace RestApiTester.Specifications
                     };
                 };
 
-                it["should raise BeforeCollectionRun event"] = () => raisedEvents.should_contain(eventName => eventName == "BeforeRequestRun");
-                it["BeforeCollectionRunEventArgs should not be null"] =
+                it["should raise BeforeRequestRun event"] =
+                    () => raisedEvents.should_contain(eventName => eventName == "BeforeRequestRun");
+                it["BeforeRequestRunEventArgs should not be null"] =
                     () => beforeRequestRunEventArgs.should_not_be_null();
+                it["BeforeRequestRunEventArgs Environment should contain Environment"] =
+                    () => beforeRequestRunEventArgs.Environment.should_be(_configuration.Environment);
+                it["BeforeRequestRunEventArgs RestClient should contain RestClient"] =
+                    () => beforeRequestRunEventArgs.RestClient.should_be(_restClient.Object);
             };
 
             context["AfterRequestRun Event"] = () =>
@@ -89,9 +99,14 @@ namespace RestApiTester.Specifications
                     };
                 };
 
-                it["should raise AfterRequestRun event"] = () => raisedEvents.should_contain(eventName => eventName == "AfterRequestRun");
+                it["should raise AfterRequestRun event"] =
+                    () => raisedEvents.should_contain(eventName => eventName == "AfterRequestRun");
                 it["AfterRequestRunEventArgs should not be null"] =
                     () => afterRequestRunEventArgs.should_not_be_null();
+                it["AfterRequestRunEventArgs Environment should contain Environment"] =
+                    () => afterRequestRunEventArgs.Environment.should_be(_configuration.Environment);
+                it["AfterRequestRunEventArgs RestClient should contain RestClient"] =
+                    () => afterRequestRunEventArgs.RestClient.should_be(_restClient.Object);
             };
 
             context["AfterCollectionRun Event"] = () =>
@@ -107,7 +122,8 @@ namespace RestApiTester.Specifications
                     };
                 };
 
-                it["should raise AfterCollectionRun event"] = () => raisedEvents.should_contain(eventName => eventName == "AfterCollectionRun");
+                it["should raise AfterCollectionRun event"] =
+                    () => raisedEvents.should_contain(eventName => eventName == "AfterCollectionRun");
                 it["AfterCollectionRunEventArgs should not be null"] =
                     () => afterCollectionRunEventArgs.should_not_be_null();
             };

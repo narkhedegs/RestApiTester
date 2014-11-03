@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System;
+using FluentValidation;
 using FluentValidation.Results;
 using Moq;
 using NSpec;
@@ -16,7 +17,7 @@ namespace RestApiTester.Specifications
         public void when_building_rest_sharp_rest_client()
         {
             const string domain = "api.gsn.com";
-            string expectedBaseUrl = null;
+            Uri expectedBaseUri = null;
 
             before = () =>
             {
@@ -26,14 +27,14 @@ namespace RestApiTester.Specifications
 
                 _restRequest = RestRequestGenerator.Default()
                     .WithUrl(UrlGenerator.Default().WithPath(domain + "/users"));
-                expectedBaseUrl = _restRequest.Url.Scheme + "://" + domain;
+                expectedBaseUri = new Uri(_restRequest.Url.Scheme + "://" + domain);
 
                 _builder = new RestSharpRestClientBuilder(restRequestValidator.Object);
             };
 
             act = () => _restClient = _builder.Build(_restRequest);
 
-            it["should populate BaseUrl"] = () => _restClient.BaseUrl.should_be(expectedBaseUrl);
+            it["should populate BaseUrl"] = () => _restClient.BaseUrl.should_be(expectedBaseUri);
         }
     }
 }

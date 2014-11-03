@@ -2,6 +2,6 @@
 {
     public interface IAfterRequestRunAddIn
     {
-        void Execute(IRestResponse response, Environment environment, IRestClient restClient);
+        void Execute(string configurationJson, IRestResponse response, Environment environment, IRestClient restClient);
     }
 }

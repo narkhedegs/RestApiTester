@@ -2,6 +2,6 @@
 {
     public interface IBeforeCollectionRunAddIn
     {
-        void Execute(IRestRequestCollection collection, Environment environment, IRestClient restClient);
+        void Execute(string configurationJson, IRestRequestCollection collection, Environment environment, IRestClient restClient);
     }
 }

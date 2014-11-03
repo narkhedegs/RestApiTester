@@ -2,6 +2,6 @@
 {
     public interface IBeforeRequestRunAddIn
     {
-        void Execute(IRestRequest request, Environment environment, IRestClient restClient);
+        void Execute(string configurationJson, IRestRequest request, Environment environment, IRestClient restClient);
     }
 }

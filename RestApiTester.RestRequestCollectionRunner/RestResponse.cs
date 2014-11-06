@@ -26,5 +26,6 @@ namespace RestApiTester
         public ResponseStatus ResponseStatus { get; set; }
         public string ErrorMessage { get; set; }
         public Exception ErrorException { get; set; }
+        public long ExecutionTime { get; set; }
     }
 }

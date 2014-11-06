@@ -61,6 +61,7 @@
     <Compile Include="Helpers\RestRequestCollectionGenerator.cs" />
     <Compile Include="Helpers\RestRequestCollectionItemGenerator.cs" />
     <Compile Include="Helpers\RestRequestGenerator.cs" />
+    <Compile Include="Helpers\RestResponseGenerator.cs" />
     <Compile Include="Helpers\UrlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rest_client_specifications.cs" />

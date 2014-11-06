@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace RestApiTester.Common
 {
@@ -10,7 +9,7 @@ namespace RestApiTester.Common
         event EventHandler<AfterRequestRunEventArgs> AfterRequestRun;
         event EventHandler<AfterCollectionRunEventArgs> AfterCollectionRun;
 
-        IEnumerable<IRestResponse> Run(
+        IRestRequestCollectionRunResult Run(
             IRestRequestCollection collection,
             RestRequestCollectionRunConfiguration configuration);
     }

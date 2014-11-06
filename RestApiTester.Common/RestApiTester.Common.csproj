@@ -44,6 +44,7 @@
     <Compile Include="BeforeCollectionRunEventArgs.cs" />
     <Compile Include="BeforeRequestRunEventArgs.cs" />
     <Compile Include="Environment.cs" />
+    <Compile Include="IAfterCollectionRunAddIn.cs" />
     <Compile Include="IAfterRequestRunAddIn.cs" />
     <Compile Include="IBeforeCollectionRunAddIn.cs" />
     <Compile Include="IBeforeRequestRunAddIn.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="IRestRequestCollectionItem.cs" />
     <Compile Include="IRestRequestCollectionParser.cs" />
     <Compile Include="IRestRequestCollectionRunner.cs" />
+    <Compile Include="IRestRequestCollectionRunResult.cs" />
     <Compile Include="IRestResponse.cs" />
     <Compile Include="IUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

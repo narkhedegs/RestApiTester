@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Moq;
 using NSpec;
+using NSpec.Domain.Extensions;
 using RestApiTester.Common;
 using RestApiTester.Specifications.Helpers;
 
@@ -12,7 +13,7 @@ namespace RestApiTester.Specifications
     {
         private RestRequestCollectionRunner _collectionRunner;
         private Mock<IRestRequestPopulator> _requestPopulator;
-        private IEnumerable<IRestResponse> _collectionRunResult;
+        private IRestRequestCollectionRunResult _collectionRunResult;
         private IRestRequestCollection _collection;
         private RestRequestCollectionRunConfiguration _configuration;
         private Mock<IRestClient> _restClient;
@@ -26,7 +27,10 @@ namespace RestApiTester.Specifications
                 raisedEvents = new List<string>();
 
                 _requestPopulator = new Mock<IRestRequestPopulator>();
+
                 _restClient = new Mock<IRestClient>();
+                _restClient.Setup(restClient => restClient.Execute(It.IsAny<IRestRequest>()))
+                        .Returns(RestResponseGenerator.Default().WithExecutionTime(0));
 
                 _collectionRunner = new RestRequestCollectionRunner(
                     _requestPopulator.Object,
@@ -37,6 +41,28 @@ namespace RestApiTester.Specifications
             };
 
             act = () => _collectionRunResult = _collectionRunner.Run(_collection, _configuration);
+
+            context["after a successful collection run"] = () =>
+            {
+                before = () =>
+                {
+                    _collection = RestRequestCollectionGenerator.Default().WithItems(new List<IRestRequestCollectionItem>
+                    {
+                        RestRequestCollectionItemGenerator.Default().WithType(RestRequestCollectionItemType.Request),
+                        RestRequestCollectionItemGenerator.Default().WithType(RestRequestCollectionItemType.Request),
+                        RestRequestCollectionItemGenerator.Default().WithType(RestRequestCollectionItemType.Request)
+                    });
+
+                    _restClient.Setup(restClient => restClient.Execute(It.IsAny<IRestRequest>()))
+                        .Returns(RestResponseGenerator.Default().WithExecutionTime(0))
+                        .Callback(() => System.Threading.Thread.Sleep(5));
+                };
+
+                it["should populate ExecutionTime for CollectionRunResult"] =
+                    () => _collectionRunResult.ExecutionTime.should_be_greater_than(0);
+                it["should populate ExecutionTime for RestResponse"] =
+                    () => _collectionRunResult.Responses.Each(response => response.ExecutionTime.should_be_greater_than(0));
+            };
 
             context["BeforeCollectionRun Event"] = () =>
             {
@@ -143,19 +169,19 @@ namespace RestApiTester.Specifications
                             });
                 };
 
-                it["should call Request Populator 3 times"] =
+                it["should call Request Populator 6 times"] =
                     () =>
                         _requestPopulator.Verify(
                             populator =>
                                 populator.Populate(It.IsAny<IRestRequest>(),
-                                    It.IsAny<RestRequestCollectionRunConfiguration>()), Times.Exactly(3));                
+                                    It.IsAny<RestRequestCollectionRunConfiguration>()), Times.Exactly(6));                
                 it["should call RestClient 3 times"] =
                     () =>
                         _restClient.Verify(
                             client => client.Execute(It.IsAny<IRestRequest>()),
                             Times.Exactly(3));
                 it["the collection run result should contain 3 Rest Responses"] =
-                    () => _collectionRunResult.Count().should_be(3);
+                    () => _collectionRunResult.Responses.Count().should_be(3);
             };
 
             context["if the collection is null"] = () =>
